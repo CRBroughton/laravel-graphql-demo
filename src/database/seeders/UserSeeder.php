@@ -15,11 +15,9 @@ class UserSeeder extends Seeder
     {
         User::factory()->count(5)->create()
             ->each(function($user) {
-                Post::create([
-                    'author_id' => $user->id,
-                    'title' => fake()->title(),
-                    'content' => fake()->text()
-                ]);
+               Post::factory()->create([
+                'author_id' => $user->id,
+               ]);
             });
     }
 }
