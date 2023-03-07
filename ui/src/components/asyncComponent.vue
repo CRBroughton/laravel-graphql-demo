@@ -1,9 +1,10 @@
 <script setup lang="ts">
 import { useQuery } from '@urql/vue'
+import { graphql } from '../gql';
 
 const {data, error} = await useQuery({
-  query: `
-    query ($first: Int!) {
+  query: graphql(`
+ query users ($first: Int!) {
         users(first: $first) {
             data {
                 id
@@ -12,7 +13,7 @@ const {data, error} = await useQuery({
             }
         }
     }
-  `,
+  `),
   variables: {first: 10}
 })
 </script>
