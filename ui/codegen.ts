@@ -7,7 +7,7 @@ const config: CodegenConfig = {
   documents: ['src/**/*.vue', 'src/graphql/*.ts'],
   ignoreNoDocuments: true, // for better experience with the watcher
   generates: {
-    './src/gql/': {
+    './src/graphql/__generated__/': {
       preset: 'client',
       config: {
         useTypeImports: true,

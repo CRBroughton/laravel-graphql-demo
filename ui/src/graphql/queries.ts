@@ -1,4 +1,4 @@
-import { graphql } from "../gql";
+import { graphql } from "./__generated__"
 
 export const userQuery = graphql(`
  query users ($first: Int!) {
